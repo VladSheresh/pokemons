@@ -1,0 +1,11 @@
+by\grsu\edu\service\PokemonsService.class
+by\grsu\edu\controller\AppController.class
+by\grsu\edu\Main.class
+by\grsu\edu\config\AppConfig.class
+by\grsu\edu\model\Pokemon.class
+by\grsu\edu\config\WebMvcInitializer.class
+by\grsu\edu\data\JsonDataImporter$1.class
+by\grsu\edu\model\Pagination.class
+by\grsu\edu\repository\PokemonsRepository.class
+by\grsu\edu\config\WebConfig.class
+by\grsu\edu\data\JsonDataImporter.class
