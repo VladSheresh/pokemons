@@ -1,13 +1,13 @@
+package by.grsu.edu.importer;
+
+import by.grsu.edu.importer.dto.EvolutionDTO;
+import by.grsu.edu.importer.dto.PokemonDTO;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import dto.EvolutionDTO;
-import dto.PokemonDTO;
 import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
 
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.Reader;
 import java.io.Writer;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -15,6 +15,7 @@ import java.util.List;
 import java.util.Map;
 
 public class Main {
+
     public static  List<PokemonDTO> listPokemonDTO = new ArrayList<>();
 
     public static void main(String[] args) throws IOException {
@@ -137,7 +138,7 @@ public class Main {
 
 
     /**
-     * сделать запрос получить в видестроки
+     * сделать запрос получить в виде строки
      */
     private static  String get(String url) throws IOException {
         return Jsoup.connect(url).ignoreContentType(true).execute().body();

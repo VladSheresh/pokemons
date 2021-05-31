@@ -20,14 +20,6 @@ public class Main {
     public static void main(String[] args) throws IOException {
 
 
-
-
-
-
-
-
-
-
         String pokemonsAsString = get("https://pokeapi.co/api/v2/pokemon/");
         Gson gson = new Gson();
         Pokemons pokemons = gson.fromJson(pokemonsAsString, Pokemons.class);

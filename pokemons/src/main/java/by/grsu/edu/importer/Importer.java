@@ -4,6 +4,7 @@ import by.grsu.edu.importer.dto.EvolutionDTO;
 import by.grsu.edu.importer.dto.PokemonDTO;
 import com.google.gson.Gson;
 import org.jsoup.Jsoup;
+import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -11,7 +12,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class Importet {
+@Component
+public class Importer {
     private List<PokemonDTO> listPokemonDTO = new ArrayList<>();
 
     public List<PokemonDTO> getListPokemonDTO() throws IOException {

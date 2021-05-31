@@ -5,3 +5,20 @@
 .lower-stat{
     background-color: #e0434a;
 }
+
+
+
+.header-h1 {
+    text-align: center;
+    margin-bottom: .5rem;
+}
+.header-h1 h1 {
+    display: inline-block;
+    background: #0097a7;
+    color: #fff;
+    margin-bottom: 0;
+    padding: .5rem 1rem .625rem 1rem;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    border-radius: 30px;
+}

@@ -1,3 +1,5 @@
+package by.grsu.edu.importer;
+
 import com.google.gson.annotations.SerializedName;
 
 public class Stat {

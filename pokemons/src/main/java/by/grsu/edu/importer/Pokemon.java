@@ -1,3 +1,5 @@
+package by.grsu.edu.importer;
+
 import java.util.List;
 
 public class Pokemon {

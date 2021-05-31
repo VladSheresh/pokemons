@@ -1,8 +1,10 @@
+package by.grsu.edu.importer;
+
 import com.google.gson.annotations.SerializedName;
 
 public class Image {
     @SerializedName("official-artwork")
-    private PokemonImage  pokemonImage;
+    private PokemonImage pokemonImage;
     @SerializedName("dream_world")
     private PokemonImageSvg pokemonImageSvg;
 

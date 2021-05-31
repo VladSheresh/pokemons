@@ -1,3 +1,5 @@
+package by.grsu.edu.importer;
+
 public class PokemonImageSvg {
     private String front_default;
 

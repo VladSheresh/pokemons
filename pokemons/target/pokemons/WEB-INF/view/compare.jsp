@@ -16,9 +16,24 @@
           integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 
     <link rel="stylesheet" href="css/style.css">
-    <title>Hello, world!</title>
+    <title>Pokemon comparison</title>
 
-
+    <style>
+        .header-h1 {
+            text-align: center;
+            margin-bottom: .5rem;
+        }
+        .header-h1 h1 {
+            display: inline-block;
+            background: #0097a7;
+            color: #fff;
+            margin-bottom: 0;
+            padding: .5rem 1rem .625rem 1rem;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            border-radius: 30px;
+        }
+    </style>
 </head>
 
 
@@ -59,67 +74,52 @@
     </div>
     -->
 
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
-                aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark" style="margin-bottom: 20px; position:sticky; top:0; z-index: 2">
+        <a class="navbar-brand" href="/hello">Home</a>
+        <a class="navbar-brand" href="/loadPokemons">Update</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarColor01">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Features</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Pricing</a>
-                </li>
-                <li class="nav-item" id="about">
-                    <a class="nav-link" href="#">About</a>
-                </li>
+                <c:forEach  var="type" items="${types}">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/hello?type=${type}">${type}</a>
+                    </li>
+                </c:forEach>
             </ul>
             <form class="form-inline">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
+
+                <input list="ice-cream-flavors" id="idPokemon" name="ice-cream-choice" placeholder="Search" aria-label="Search" style="
+    display: block;
+    /* width: 75%; */
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 4;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    margin-right: 10px;
+">
+                <datalist id="ice-cream-flavors" >
+                    <c:forEach var="name" items="${names}">
+                    <option value="${name}">
+                        </c:forEach>
+                </datalist>
             </form>
+            <button id="searchPokemon" class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
         </div>
     </nav>
 
-    <nav class="navbar navbar-light bg-light">
-        <form class="form-inline">
-            <div class="input-group">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="basic-addon1">@</span>
-                </div>
-                <input type="text" class="form-control" placeholder="Username" aria-label="Username"
-                       aria-describedby="basic-addon1">
-            </div>
-        </form>
-    </nav>
-
-    <!--
-        <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-            <div class="btn-group pd-2" role="group" aria-label="First group">
-                <button type="button" class="btn btn-secondary">1</button>
-                <button type="button" class="btn btn-secondary">2</button>
-                <button type="button" class="btn btn-secondary">3</button>
-                <button type="button" class="btn btn-secondary">4</button>
-            </div>
-            <div class="btn-group ml-2" role="group" aria-label="Second group">
-                <button type="button" class="btn btn-secondary">5</button>
-                <button type="button" class="btn btn-secondary">6</button>
-                <button type="button" class="btn btn-secondary">7</button>
-            </div>
-            <div class="btn-group" role="group" aria-label="Third group">
-                <button type="button" class="btn btn-secondary">8</button>
-            </div>
-        </div>
-        -->
-    <!--        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4 ml-1 mr-1">-->
-    <!--            <div class="row row-cols-2 card text-white border-0 bg-transparent mr-auto ml-auto">-->
-    <div class="row row-cols-2 text-white w-75 bg-dark mr-auto ml-auto" style="border-radius: 10px">
+    <div class="header-h1" style="text-align: center; margin-bottom: 20px;">
+        <h1>Pokemon comparison</h1>
+    </div>
+    <div class="row row-cols-2 text-white w-75 bg-dark mr-auto ml-auto" style="border-radius: 10px; margin-bottom: 50px">
         <div class="col">
             <div class="card-header text-center ">
                 ${first.name}
@@ -134,51 +134,29 @@
             <img src="${second.pngImageUrl}"
                  class="card-img-top" alt="...">
         </div>
-        <c:forEach var="key" items="${first.stats.keySet()}">
+        <c:forEach var="name" items="${stats}">
 
             <div class="col-12 text-center">
-                    ${key}
+                    ${name}
             </div>
-            <div class="col text-center <c:if test="${first.stats.get(key) > second.stats.get(key)}"> lower-stat </c:if>">
-                    ${first.stats.get(key)}
+            <div class="col text-center <c:if test="${firstStats.get(name) >= secondStats.get(name)}"> greater-stat </c:if>  <c:if test="${firstStats.get(name) < secondStats.get(name)}"> lower-stat </c:if>">
+                    ${firstStats.get(name)}
             </div>
-            <div class="col text-center greater-stat">
-                    ${second.stats.get(key)}
+            <div class="col text-center <c:if test="${firstStats.get(name) <= secondStats.get(name)}"> greater-stat </c:if>  <c:if test="${firstStats.get(name) > secondStats.get(name)}"> lower-stat </c:if>">
+                    ${secondStats.get(name)}
             </div>
-
         </c:forEach>
-        <div class="col-12 text-center">
-            HP
+        <div class="col text-center">
+            ${first.types.get(0).name}
         </div>
-        <div class="col text-center <c:if test="${first.stats.get('hp') > second.stats.get('hp')}"> lower-stat </c:if>">
-            ${first.stats.get("hp")}
+        <div class="col text-center">
+            ${second.types.get(0).name}
         </div>
-        <div class="col text-center greater-stat">
-            ${second.stats.get("hp")}
+        <div class="col text-center">
+            ${first.types.get(1).name}
         </div>
-
-        <div class="col-12 text-center">
-            damage
-        </div>
-        <div class="col text-center greater-stat">
-            ${first.stats.get("attack")}
-        </div>
-        <div class="col text-center lower-stat <c:if test="true">asd</c:if>">
-            ${second.stats.get("attack")}
-        </div>
-
-        <div class="col-12 text-center">
-            defense
-        </div>
-        <div class="col text-center greater-stat">
-            ${first.stats.get("defense")}
-        </div>
-        <div class="col text-center lower-stat">
-            ${second.stats.get("defense")}
-        </div>
-
-        <div class="card-footer text-muted">
-            2 days ago
+        <div class="col text-center">
+            ${second.types.get(1).name}
         </div>
     </div>
     <!--            </div>-->

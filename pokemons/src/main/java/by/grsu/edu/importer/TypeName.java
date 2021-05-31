@@ -1,3 +1,5 @@
+package by.grsu.edu.importer;
+
 public class TypeName {
     private String name;
     private String url;
