@@ -1018,6 +1018,7 @@ sequence|table|18723|18725|1
     </sequence>
     <table id="35" parent="16" name="booking">
       <ObjectId>18701</ObjectId>
+      <Outdated>1</Outdated>
       <Owner>postgres</Owner>
       <StateNumber>1309</StateNumber>
     </table>

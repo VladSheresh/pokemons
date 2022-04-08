@@ -3,7 +3,7 @@ package by.grsu.edu.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "type")
+@Table(name = "type")   
 public class PokemonType {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "type_gen")
