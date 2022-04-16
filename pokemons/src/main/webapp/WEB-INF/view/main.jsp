@@ -41,44 +41,10 @@
 <body style="background: url(https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/2.png) 100% 100% no-repeat fixed;">
 <div class="container-fluid">
 
-    <!--
-    <div class="row">
-        <div class="col col-xl-6 col-md-12 alert alert-success alert-dismissible fade show" role="alert">
-            <h4 class="alert-heading">Hello, world! <span class="badge badge-warning">New</span></h4>
-            <p>A simple success alert—check it out!</p>
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-
-        <div class="col col-xl-6 col-md-12 alert alert-warning alert-dismissible fade show" role="alert">
-            <strong>Holy guacamole!</strong> You <a href="#" class="badge badge-primary alert-link disabled"
-                                                    tabindex="-1" role="button" aria-disabled="true">an example link</a>
-            should check in on some of those fields below.
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-    </div>
-
-    <button type="button" class="btn btn-primary btn-block">
-        Notifications <span class="badge badge-pill badge-light">4</span>
-    </button>
-
-    <button type="button" class="btn btn-primary btn-block active btn-lg " disabled>
-        Notifications <span class="badge badge-pill badge-light">4</span>
-    </button>
-    <a href="https://getbootstrap.com/docs/4.6/components/badge/" class="badge badge-primary">Primary</a>
-    <div class="btn-group" role="group" aria-label="Basic example">
-        <button type="button" class="btn btn-secondary">Left</button>
-        <button type="button" class="btn btn-info">Middle</button>
-        <button type="button" class="btn btn-primary">Right</button>
-    </div>
-    -->
-
     <nav class="navbar navbar-expand-md navbar-dark bg-dark" style="margin-bottom: 20px; position:sticky; top:0; z-index: 2">
         <a class="navbar-brand" href="/hello">Home</a>
         <a class="navbar-brand" href="/loadPokemons">Update</a>
+        <a class="navbar-brand" href="/save">Create</a>
         <a class="navbar-brand" style="cursor: pointer; border-radius: 10px" onclick="alert('select 2 pokemon')" id="cmp">Compare</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -153,6 +119,7 @@
                 </ul>
                 <div class="card-body">
                 <a href="/hello?idEvolution=${pokemon.name}" class="btn btn-primary">evolution</a>
+                    <a href="/delete?idPokemon=${pokemon.id}" class="btn btn-primary">delete</a>
                 </div>
             </div>
         </div>

@@ -148,6 +148,22 @@ public class PokemonsRepository {
         return session.createQuery(query).getResultList();
     }
 
+    public void createPokemon(Pokemon pokemon){
+        Session session = sessionFactory.getCurrentSession();
+        String sql = "INSERT INTO pokemon (url, name, attack, defense) VALUES (" + pokemon.getName() + ", "+ pokemon.getName() +", "+pokemon.getAttack()+", " + pokemon.getDefense()+ ")";
+        session.createSQLQuery(sql).executeUpdate();
+
+    }
+
+    public void deletePokemon(Long id){
+        Session session = sessionFactory.getCurrentSession();
+        String sql1 = "delete from pokemon_type where pokemon_id =" + id;
+        String sql = "delete from pokemon where pokemon.id =" + id;
+        session.createSQLQuery(sql1).executeUpdate();
+        session.createSQLQuery(sql).executeUpdate();
+
+    }
+
     public void clearData(){
         Session session = sessionFactory.getCurrentSession();
         session.createSQLQuery("delete from pokemon_type").executeUpdate();

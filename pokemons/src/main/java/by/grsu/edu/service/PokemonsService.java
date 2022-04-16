@@ -66,6 +66,14 @@ public class PokemonsService {
         pokemonsRepository.clearData();
     }
 
+    public void deletePokemon(Long id){
+        pokemonsRepository.deletePokemon(id);
+    }
+
+    public void createPokemon(Pokemon pokemon){
+        pokemonsRepository.create(pokemon);
+    }
+
     public List<Pokemon> getPokemons(Pagination pagination) {
         return pokemonsRepository.getPokemons(pagination);
     }
